@@ -1,0 +1,40 @@
+# This file extends the docker-compose.yml with production configurations/overrides. https://docs.docker.com/compose/compose-file/13-merge/
+version: "3.8"
+services:
+  postgres:
+    # Add a name to easy identify
+    container_name: paperlessPostgresProd
+
+  redis:
+    # Add a name to easy identify
+    container_name: paperlessRedisProd
+
+  gotenberg:
+    # Add a name to easy identify
+    container_name: paperlessGotenbergProd
+
+  tika:
+    # Add a name to easy identify
+    container_name: paperlessTikaProd
+
+  paperless:
+    # Add a name to easy identify
+    container_name: paperlessProd
+
+   # https://docs.paperless-ngx.com/configuration/
+    environment:
+      # Reverse proxy config. See: https://github.com/Good-Games-Munich/nginx
+      VIRTUAL_HOST: ${PAPERLESS_HOST?Missing environment variable see readme}
+      VIRTUAL_PORT: 8000 # Port of service to proxy inside container
+      LETSENCRYPT_HOST: ${PAPERLESS_HOST:?Missing environment variable see readme}
+
+    # Reverse proxy network. See: https://github.com/Good-Games-Munich/nginx
+    networks:
+      - default
+      - nginxproxynet
+
+# Reverse proxy network. See: https://github.com/Good-Games-Munich/nginx
+networks:
+  nginxproxynet:
+    name: nginxproxynet
+    external: true

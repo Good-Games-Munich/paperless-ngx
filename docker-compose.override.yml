@@ -1,0 +1,47 @@
+# This file extends the docker-compose.yml with develop configurations/overrides. https://docs.docker.com/compose/compose-file/13-merge/
+# This file gets applied automatically when no --file parameter is provided
+version: "3.8"
+services:
+  postgres:
+    # Add a name to easy identify
+    container_name: paperlessPostgresDev
+
+    environment:
+      # Try to force color in the terminal because pretty!
+      FORCE_COLOR: 1
+
+  redis:
+    # Add a name to easy identify
+    container_name: paperlessRedisDev
+
+    environment:
+      # Try to force color in the terminal because pretty!
+      FORCE_COLOR: 1
+
+  gotenberg:
+    # Add a name to easy identify
+    container_name: paperlessGotenbergDev
+
+    environment:
+      # Try to force color in the terminal because pretty!
+      FORCE_COLOR: 1
+
+  tika:
+    # Add a name to easy identify
+    container_name: paperlessTikaDev
+
+    environment:
+      # Try to force color in the terminal because pretty!
+      FORCE_COLOR: 1
+
+  paperless:
+    # Add a name to easy identify
+    container_name: paperlessDev
+
+    environment:
+      # Try to force color in the terminal because pretty!
+      FORCE_COLOR: 1
+
+    # Map container port to host port. https://docs.docker.com/compose/networking/
+    ports:
+      - 3500:8000
