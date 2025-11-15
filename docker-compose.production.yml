@@ -27,7 +27,7 @@ services:
       VIRTUAL_HOST: ${PAPERLESS_HOST?Missing environment variable see readme}
       VIRTUAL_PORT: 8000 # Port of service to proxy inside container
       LETSENCRYPT_HOST: ${PAPERLESS_HOST:?Missing environment variable see readme}
-      PAPERLESS_URL: ${PAPERLESS_HOST:?Missing environment variable see readme}
+      PAPERLESS_URL: https://${PAPERLESS_HOST:?Missing environment variable see readme}
 
     # Reverse proxy network. See: https://github.com/Good-Games-Munich/nginx
     networks:
