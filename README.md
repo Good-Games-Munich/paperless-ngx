@@ -27,7 +27,7 @@
 
 ## About The Project
 
-Setup for paperless-ngx as document archive.
+Setup for paperless-ngx as document index/archive.
 
 ## Setup
 
