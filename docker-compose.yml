@@ -62,7 +62,7 @@ services:
   # https://hub.docker.com/r/paperlessngx/paperless-ngx
   paperless:
     # https://hub.docker.com/r/paperlessngx/paperless-ngx/tags
-    image: paperlessngx/paperless-ngx:2.19
+    image: paperlessngx/paperless-ngx:2.20
 
     # https://www.baeldung.com/ops/docker-compose-restart-policies
     restart: unless-stopped
