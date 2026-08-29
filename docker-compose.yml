@@ -54,7 +54,7 @@ services:
   # https://hub.docker.com/r/apache/tika
   tika:
     # https://hub.docker.com/r/apache/tika/tags
-    image: apache/tika:3.2.3.0
+    image: apache/tika:3.3.1.0
 
     # https://www.baeldung.com/ops/docker-compose-restart-policies
     restart: unless-stopped
