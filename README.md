@@ -49,6 +49,7 @@ Create a environment file `touch .env`. Override variables in the `{variable nam
 | ------------------- | ---------------------------------------------------------------- | --------------- | ---------------- | ------------- |
 | `POSTGRES_PASSWORD` | Postgres password. Choose a secure one.                          | `true`          | `true`           | none          |
 | `PAPERLESS_HOST`    | URL to be used by the reverse proxy. E.g. `paperless.domain.de`. | `false`         | `true`           | none          |
+| `PAPERLESS_SECRET_KEY` | Secret used for cryptographic signing (required since v3). Generate one with `python3 -c "import secrets; print(secrets.token_urlsafe(64))"`. | `true`          | `true`           | none          |
 
 <!-- CONTRIBUTING -->
 
