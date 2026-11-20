@@ -9,9 +9,9 @@ services:
     # https://www.baeldung.com/ops/docker-compose-restart-policies
     restart: unless-stopped
 
-    # Default postgres port. This line is not here to configure something. It is more of a reminder so chaning it will do nothing
-    ports:
-      - 5432
+    # Default postgres port. Only reachable by other containers on the compose network. Do not use `ports` here: it would publish the port on a random host port.
+    expose:
+      - "5432"
 
     # https://docs.docker.com/compose/environment-variables/set-environment-variables/
     environment:
@@ -32,9 +32,9 @@ services:
     # https://www.baeldung.com/ops/docker-compose-restart-policies
     restart: unless-stopped
 
-    # Default redis port. This line is not here to configure something. It is more of a reminder so chaning it will do nothing
-    ports:
-      - 6379
+    # Default redis port. Only reachable by other containers on the compose network. Do not use `ports` here: it would publish the port on a random host port.
+    expose:
+      - "6379"
 
   # https://hub.docker.com/r/gotenberg/gotenberg
   gotenberg:
@@ -67,9 +67,9 @@ services:
     # https://www.baeldung.com/ops/docker-compose-restart-policies
     restart: unless-stopped
 
-    # Default paperless port. This line is not here to configure something. It is more of a reminder so chaning it will do nothing
-    ports:
-      - 8000
+    # Default paperless port. Only reachable by other containers on the compose network. Do not use `ports` here: it would publish the port on a random host port.
+    expose:
+      - "8000"
 
     # https://docs.paperless-ngx.com/configuration/
     # All configs should be set here as environment variable
